@@ -1,6 +1,7 @@
 ﻿using ShoppingCartNamespace.Contracts;
 using ShoppingCartNamespace.Domain;
 using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace ShoppingCartNamespace
 {
@@ -17,9 +18,11 @@ namespace ShoppingCartNamespace
             this._client = client;
         }
 
-        public Task<IEnumerable<ShoppingCartItem>> GetShoppingCartItems(int[] productCatalogueIds)
+        public async Task<IEnumerable<ShoppingCartItem>> GetShoppingCartItems(int[] productCatalogueIds)
         {
-            throw new NotImplementedException();
+            using var response = await this.RequestProductFromProductCatalogue(productCatalogueIds);
+
+            return await ConvertToShoppingCartItems(response);
         }
 
         private async Task<HttpResponseMessage> RequestProductFromProductCatalogue(int[] productCatalogueIds)
@@ -28,5 +31,20 @@ namespace ShoppingCartNamespace
 
             return await this._client.GetAsync(productsResource);
         }
+
+        private static async Task<IEnumerable<ShoppingCartItem>> ConvertToShoppingCartItems(HttpResponseMessage response)
+        {
+            response.EnsureSuccessStatusCode();
+
+            var products = await JsonSerializer.DeserializeAsync<List<ProductCatalogProduct>>(await response.Content.ReadAsStreamAsync(),
+                new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                }) ?? new();
+
+            return products.Select(p => new ShoppingCartItem(p.ProductId, p.ProductName, p.ProductDescription, p.Price));
+        }
+
+        private record ProductCatalogProduct(int ProductId, string ProductName, string ProductDescription, Money Price);
     }
 }

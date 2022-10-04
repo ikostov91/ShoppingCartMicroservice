@@ -1,4 +1,6 @@
-﻿namespace ShoppingCartNamespace.Domain
+﻿using ShoppingCartNamespace.Contracts;
+
+namespace ShoppingCartNamespace.Domain
 {
     public class ShoppingCart
     {
@@ -12,7 +14,7 @@
         public int UserId { get; set; }
         public IEnumerable<ShoppingCartItem> Items => this._items;
     
-        public void AddItems(IEnumerable<ShoppingCartItem> items)
+        public void AddItems(IEnumerable<ShoppingCartItem> items, IEventStore eventStore)
         {
             foreach (var item in items)
             {
@@ -20,7 +22,7 @@
             }
         }
 
-        public void RemoveItems(int[] productCatalogueIds)
+        public void RemoveItems(int[] productCatalogueIds, IEventStore eventStore)
         {
             this._items.RemoveWhere(x => productCatalogueIds.Contains(x.ProductCatalogueId));
         }
