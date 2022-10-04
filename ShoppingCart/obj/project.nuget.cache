@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "r8gmvrPIudZdZQXn/GSE4/mLUDMwbnkmJQMn0zl+1dYrwwMIgJkTOqLmIEN1FhNq6OE/5YR1vD5QtXg47oeDLw==",
+  "dgSpecHash": "KcUmbo7FTeszhdYpv0BR0Q7Dd/Jb5R9EnPJ0aBw7/T2RXUzVVHXC3Mk6XGnOg9TPpfweRX4cIHLMhI+WchFPIg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ext-i.kostov\\Desktop\\Personal\\Repos\\random-coding\\ShoppingCartMicroservice\\ShoppingCart\\ShoppingCart.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ext-i.kostov\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\ext-i.kostov\\.nuget\\packages\\microsoft.extensions.dependencymodel\\6.0.0\\microsoft.extensions.dependencymodel.6.0.0.nupkg.sha512",
+    "C:\\Users\\ext-i.kostov\\.nuget\\packages\\scrutor\\4.2.0\\scrutor.4.2.0.nupkg.sha512",
+    "C:\\Users\\ext-i.kostov\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\ext-i.kostov\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\ext-i.kostov\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\ext-i.kostov\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\ext-i.kostov\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,4 +1,4 @@
-namespace ShoppingCart
+namespace ShoppingCartNamespace
 {
     public class Program
     {
@@ -18,6 +18,11 @@ namespace ShoppingCart
         private static void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.Scan(selector =>
+                selector
+                    .FromExecutingAssembly()
+                    .AddClasses()
+                    .AsImplementedInterfaces());
         }
 
         private static void Configure(WebApplication app)
