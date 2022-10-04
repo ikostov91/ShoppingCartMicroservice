@@ -1,3 +1,5 @@
+using ShoppingCartNamespace.Contracts;
+
 namespace ShoppingCartNamespace
 {
     public class Program
@@ -23,6 +25,8 @@ namespace ShoppingCartNamespace
                     .FromExecutingAssembly()
                     .AddClasses()
                     .AsImplementedInterfaces());
+
+            services.AddHttpClient<IProductCatalogueClient, ProductCatalogueClient>();
         }
 
         private static void Configure(WebApplication app)
