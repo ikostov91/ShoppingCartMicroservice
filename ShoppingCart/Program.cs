@@ -1,3 +1,4 @@
+using Polly;
 using ShoppingCartNamespace.Contracts;
 
 namespace ShoppingCartNamespace
@@ -26,7 +27,9 @@ namespace ShoppingCartNamespace
                     .AddClasses()
                     .AsImplementedInterfaces());
 
-            services.AddHttpClient<IProductCatalogueClient, ProductCatalogueClient>();
+            services.AddHttpClient<IProductCatalogueClient, ProductCatalogueClient>()
+                .AddTransientHttpErrorPolicy(p =>
+                    p.WaitAndRetryAsync(3, attempt => TimeSpan.FromMilliseconds(100 * Math.Pow(2, attempt))));
         }
 
         private static void Configure(WebApplication app)
