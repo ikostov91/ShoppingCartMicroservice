@@ -18,26 +18,30 @@ namespace ShoppingCartNamespace.Domain
         {
             foreach (var item in items)
             {
-                this._items.Add(item);
+                if (this._items.Add(item))
+                {
+                    eventStore.Raise("ShoppingCartItemAdded", new { UserId, item });
+                }
             }
         }
 
-        public void RemoveItems(int[] productCatalogueIds, IEventStore eventStore)
+        public void RemoveItems(int[] productCatalogIds, IEventStore eventStore)
         {
-            this._items.RemoveWhere(x => productCatalogueIds.Contains(x.ProductCatalogueId));
+            this._items.RemoveWhere(x => productCatalogIds.Contains(x.ProductCatalogId));
+            eventStore.Raise("ShoppingCartItemsRemoved", new { ProductCatalogIds = productCatalogIds });
         }
     }
 
-    public record ShoppingCartItem(int ProductCatalogueId, string PtoductName, string Description, Money Price)
+    public record ShoppingCartItem(int ProductCatalogId, string PtoductName, string Description, Money Price)
     {
         public virtual bool Equals(ShoppingCartItem? obj)
         {
-            return obj != null && this.ProductCatalogueId.Equals(obj.ProductCatalogueId);
+            return obj != null && this.ProductCatalogId.Equals(obj.ProductCatalogId);
         }
 
         public override int GetHashCode()
         {
-            return this.ProductCatalogueId.GetHashCode();
+            return this.ProductCatalogId.GetHashCode();
         }
     }
 

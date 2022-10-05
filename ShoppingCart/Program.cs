@@ -23,9 +23,9 @@ namespace ShoppingCartNamespace
             services.AddControllers();
             services.Scan(selector =>
                 selector
-                    .FromExecutingAssembly()
+                    .FromAssemblyOf<Program>()
                     .AddClasses()
-                    .AsImplementedInterfaces());
+                    .AsMatchingInterface());
 
             services.AddHttpClient<IProductCatalogueClient, ProductCatalogueClient>()
                 .AddTransientHttpErrorPolicy(p =>

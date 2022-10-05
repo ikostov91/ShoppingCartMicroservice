@@ -19,3 +19,9 @@ C:\Users\ext-i.kostov\Desktop\Personal\Repos\random-coding\ShoppingCartMicroserv
 C:\Users\ext-i.kostov\Desktop\Personal\Repos\random-coding\ShoppingCartMicroservice\ShoppingCart\obj\Debug\net6.0\ShoppingCart.pdb
 C:\Users\ext-i.kostov\Desktop\Personal\Repos\random-coding\ShoppingCartMicroservice\ShoppingCart\obj\Debug\net6.0\ShoppingCart.genruntimeconfig.cache
 C:\Users\ext-i.kostov\Desktop\Personal\Repos\random-coding\ShoppingCartMicroservice\ShoppingCart\obj\Debug\net6.0\ref\ShoppingCart.dll
+C:\Users\ext-i.kostov\Desktop\Personal\Repos\random-coding\ShoppingCartMicroservice\ShoppingCart\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\ext-i.kostov\Desktop\Personal\Repos\random-coding\ShoppingCartMicroservice\ShoppingCart\bin\Debug\net6.0\Microsoft.Extensions.Http.Polly.dll
+C:\Users\ext-i.kostov\Desktop\Personal\Repos\random-coding\ShoppingCartMicroservice\ShoppingCart\bin\Debug\net6.0\Polly.dll
+C:\Users\ext-i.kostov\Desktop\Personal\Repos\random-coding\ShoppingCartMicroservice\ShoppingCart\bin\Debug\net6.0\Polly.Extensions.Http.dll
+C:\Users\ext-i.kostov\Desktop\Personal\Repos\random-coding\ShoppingCartMicroservice\ShoppingCart\bin\Debug\net6.0\Scrutor.dll
+C:\Users\ext-i.kostov\Desktop\Personal\Repos\random-coding\ShoppingCartMicroservice\ShoppingCart\obj\Debug\net6.0\ShoppingCart.csproj.CopyComplete
